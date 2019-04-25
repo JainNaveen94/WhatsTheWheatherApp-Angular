@@ -1,0 +1,18 @@
+
+.cityname {
+    font-size: 50px;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.date {
+    font-size: 15px;
+    font-weight: bold;
+}
+.description {
+    font-size: 12px;
+    font-weight: bold;
+}
+.temp {
+    text-align: left;
+    align-content: left;
+}

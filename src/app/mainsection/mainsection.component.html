@@ -1,0 +1,49 @@
+<div class="card main" *ngIf="weatherReport.length > 0">
+  <div class="cityname">{{weatherReport[0].cityName}}</div>
+  <div class="date">{{weatherReport[0].dateToDisplay}}</div>
+  <div class="description">{{weatherReport[0].description}}</div>
+  <div class="row temp">
+    <div class="col-8 left">
+      <img src={{weatherReport[0].imageToDisplay}} width="100px">
+      <font size="6"><b>{{weatherReport[0].temperatureToDisplay}} <sup>o</sup>C</b></font>
+    </div>
+    <div class="col-4 right">
+      <br>
+      <font size="4">
+        <b>Humidity:</b>{{weatherReport[0].humidity}}%
+        <br>
+        <b>Wind:</b>{{weatherReport[0].wind}}mph
+      </font>
+    </div>
+  </div>
+</div>
+<mat-accordion multi="true" *ngIf="weatherReport.length > 0">
+  <mat-expansion-panel *ngFor="let report of weatherReport">
+    <mat-expansion-panel-header>
+      <table class="table" align="center">
+        <thead>
+          <tr class="row mt-4 ml-4">
+            <th class="col-3" scope="col">{{report.dateToDisplay}}</th>
+            <th class="col-3" scope="col"><img src={{report.imageToDisplay}}></th>
+            <th class="col-3" scope="col">{{report.temperatureToDisplay}}<sup>o</sup>C</th>
+            <th class="col-3" scope="col">{{report.description}}</th>
+          </tr>
+        </thead>
+      </table>
+    </mat-expansion-panel-header>
+    <div class="row temp">
+      <div class="col-8 left">
+        <img src={{report.imageToDisplay}} width="100px">
+        <font size="6"><b>{{report.temperatureToDisplay}} <sup>o</sup>C</b></font>
+      </div>
+      <div class="col-4 right">
+        <br>
+        <font size="4">
+          <b>Humidity:</b>{{report.humidity}}%
+          <br>
+          <b>Wind:</b>{{report.wind}}mph
+        </font>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

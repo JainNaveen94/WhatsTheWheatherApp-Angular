@@ -1,0 +1,11 @@
+<mat-card class="inputcard">
+  <form (submit)="getWhetherReport(whetherForm)" #whetherForm="ngForm">
+    <mat-form-field>
+      <input matInput placeholder="City Ex:Delhi" type="text" name="city" ngModel required #city="ngModel">
+      <mat-error *ngIf="city.invalid">City Name Is Required For Whether Report</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="submit">Get Whether Report</button>
+  </form>
+</mat-card>
+
+<!-- <input type="text" placeholder="Coming Soon"> -->
